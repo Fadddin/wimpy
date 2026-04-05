@@ -127,7 +127,7 @@ export function CoverSection({ onOpenDiary }: CoverSectionProps) {
             >
               A <span className="highlighted">very serious</span> journey of a
               <br />
-              full-stack developer from Tezpur
+              full-stack developer
             </motion.p>
             
             {/* Stick figure */}
@@ -148,7 +148,7 @@ export function CoverSection({ onOpenDiary }: CoverSectionProps) {
               transition={{ delay: 0.8 }}
               style={{ transform: "rotate(2deg)" }}
             >
-              {"<-- that's me, GDG Tech Lead (not to scale)"}
+              {"<-- that's me (not to scale)"}
             </motion.p>
             
             {/* Open button - more sketchy */}
