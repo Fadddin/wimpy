@@ -1,0 +1,460 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Paper/Notebook colors */
+  --background: oklch(0.95 0.012 85); /* Slightly yellowed paper */
+  --foreground: oklch(0.12 0.005 0); /* Pencil sketch black */
+  --card: oklch(0.97 0.01 82); /* Inner page paper */
+  --card-foreground: oklch(0.12 0.005 0);
+  --popover: oklch(0.97 0.01 82);
+  --popover-foreground: oklch(0.12 0.005 0);
+  --primary: oklch(0.18 0 0); /* Dark pencil */
+  --primary-foreground: oklch(0.95 0.012 85);
+  --secondary: oklch(0.93 0.015 80); /* Aged sticky note */
+  --secondary-foreground: oklch(0.18 0 0);
+  --muted: oklch(0.86 0.02 78); /* Coffee stain color */
+  --muted-foreground: oklch(0.42 0.01 0);
+  --accent: oklch(0.52 0.14 22); /* Faded red pen */
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.72 0.025 75); /* Sketchy pencil line */
+  --input: oklch(0.93 0.015 80);
+  --ring: oklch(0.35 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.25rem;
+  --sidebar: oklch(0.94 0.01 80);
+  --sidebar-foreground: oklch(0.12 0.005 0);
+  --sidebar-primary: oklch(0.18 0 0);
+  --sidebar-primary-foreground: oklch(0.95 0.012 85);
+  --sidebar-accent: oklch(0.86 0.02 78);
+  --sidebar-accent-foreground: oklch(0.18 0 0);
+  --sidebar-border: oklch(0.72 0.025 75);
+  --sidebar-ring: oklch(0.35 0 0);
+  
+  /* Custom colors */
+  --notebook-line: oklch(0.72 0.1 230); /* Blue ruled lines */
+  --tape: oklch(0.88 0.06 95); /* Masking tape */
+  --tape-dark: oklch(0.82 0.08 90);
+  --pencil-gray: oklch(0.55 0 0);
+  --eraser-smudge: oklch(0.85 0.015 80);
+  --coffee-stain: oklch(0.75 0.08 60);
+  --highlighter: oklch(0.92 0.15 100);
+}
+
+.dark {
+  --background: oklch(0.16 0.012 85);
+  --foreground: oklch(0.88 0.01 82);
+  --card: oklch(0.20 0.01 80);
+  --card-foreground: oklch(0.88 0.01 82);
+  --popover: oklch(0.20 0.01 80);
+  --popover-foreground: oklch(0.88 0.01 82);
+  --primary: oklch(0.88 0.01 82);
+  --primary-foreground: oklch(0.16 0.012 85);
+  --secondary: oklch(0.26 0.015 80);
+  --secondary-foreground: oklch(0.88 0.01 82);
+  --muted: oklch(0.30 0.02 78);
+  --muted-foreground: oklch(0.62 0.01 0);
+  --accent: oklch(0.62 0.14 22);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.38 0.025 75);
+  --input: oklch(0.26 0.015 80);
+  --ring: oklch(0.55 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.20 0.01 80);
+  --sidebar-foreground: oklch(0.88 0.01 82);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.88 0.01 82);
+  --sidebar-accent: oklch(0.26 0.015 80);
+  --sidebar-accent-foreground: oklch(0.88 0.01 82);
+  --sidebar-border: oklch(0.38 0.025 75);
+  --sidebar-ring: oklch(0.55 0 0);
+  --notebook-line: oklch(0.42 0.08 230);
+  --tape: oklch(0.38 0.06 95);
+  --tape-dark: oklch(0.32 0.08 90);
+  --pencil-gray: oklch(0.65 0 0);
+  --eraser-smudge: oklch(0.28 0.015 80);
+  --coffee-stain: oklch(0.35 0.08 60);
+  --highlighter: oklch(0.45 0.12 100);
+}
+
+@theme inline {
+  --font-sans: var(--font-hand), 'Patrick Hand', cursive;
+  --font-mono: var(--font-caveat), 'Caveat', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-notebook-line: var(--notebook-line);
+  --color-tape: var(--tape);
+  --color-tape-dark: var(--tape-dark);
+  --color-pencil-gray: var(--pencil-gray);
+  --color-eraser-smudge: var(--eraser-smudge);
+  --color-coffee-stain: var(--coffee-stain);
+  --color-highlighter: var(--highlighter);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced notebook lines with imperfect spacing */
+.notebook-lines {
+  background-image: 
+    repeating-linear-gradient(
+      transparent,
+      transparent 30px,
+      var(--notebook-line) 30px,
+      var(--notebook-line) 31px
+    ),
+    repeating-linear-gradient(
+      transparent,
+      transparent 29px,
+      rgba(0,0,0,0.02) 29px,
+      rgba(0,0,0,0.02) 32px
+    );
+}
+
+/* More realistic paper texture with grain */
+.paper-texture {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='fiber'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.02' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fiber)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Sketchy imperfect border variations */
+.sketchy-border {
+  border: 2px solid currentColor;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.sketchy-border-2 {
+  border: 2px solid currentColor;
+  border-radius: 15px 255px 15px 255px/255px 15px 255px 15px;
+}
+
+.sketchy-border-3 {
+  border: 2.5px solid currentColor;
+  border-radius: 185px 25px 215px 25px/25px 195px 25px 225px;
+}
+
+/* Multiple tape styles */
+.tape {
+  position: relative;
+}
+
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 70px;
+  height: 22px;
+  background: linear-gradient(135deg, var(--tape) 0%, var(--tape-dark) 100%);
+  opacity: 0.85;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.tape-left::before {
+  left: 15%;
+  transform: rotate(-8deg);
+}
+
+.tape-right::before {
+  left: 85%;
+  transform: rotate(6deg);
+}
+
+.tape-double::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 65px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--tape) 0%, var(--tape-dark) 100%);
+  opacity: 0.75;
+  border-radius: 1px;
+}
+
+/* Paper curl effect */
+.paper-curl {
+  position: relative;
+}
+
+.paper-curl::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, transparent 50%, var(--muted) 50%);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.1);
+}
+
+/* Coffee stain ring */
+.coffee-stain {
+  position: relative;
+}
+
+.coffee-stain::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 8px solid var(--coffee-stain);
+  opacity: 0.15;
+  top: -20px;
+  right: -15px;
+  transform: rotate(15deg);
+}
+
+/* Eraser smudge effect */
+.eraser-smudge {
+  position: relative;
+}
+
+.eraser-smudge::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 15px;
+  background: var(--eraser-smudge);
+  opacity: 0.4;
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+/* Highlighter effect */
+.highlighted {
+  background: linear-gradient(180deg, transparent 60%, var(--highlighter) 60%);
+  padding: 0 4px;
+}
+
+/* Pencil scribble underline */
+.scribble-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.scribble-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 Q10 0 20 4 T40 4 T60 4 T80 4 T100 4' stroke='%23333' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 50px 8px;
+  opacity: 0.7;
+}
+
+/* Hand-drawn wavy underline */
+.hand-underline {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.hand-underline::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: -3px;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 C5 1, 10 5, 20 3 S30 1, 40 3 S50 5, 60 3 S70 1, 80 3 S90 5, 100 3 S110 1, 120 3' stroke='%23333' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 60px 6px;
+  opacity: 0.8;
+}
+
+/* Crossed out text */
+.crossed-out {
+  position: relative;
+  display: inline-block;
+}
+
+.crossed-out::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: 50%;
+  height: 3px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5 Q25 0 50 2 T100 1' stroke='%23333' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  opacity: 0.8;
+}
+
+/* Wiggle animation variations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+@keyframes wiggle-strong {
+  0%, 100% { transform: rotate(-3deg) scale(1.02); }
+  50% { transform: rotate(3deg) scale(1.02); }
+}
+
+@keyframes pencil-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-1px) rotate(-0.5deg); }
+  75% { transform: translateX(1px) rotate(0.5deg); }
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+.hover-wiggle-strong:hover {
+  animation: wiggle-strong 0.4s ease-in-out;
+}
+
+.pencil-shake:hover {
+  animation: pencil-shake 0.15s ease-in-out infinite;
+}
+
+/* Sticky note paper effect */
+.sticky-note {
+  background: linear-gradient(180deg, var(--secondary) 0%, oklch(0.90 0.02 80) 100%);
+  box-shadow: 
+    2px 2px 5px rgba(0,0,0,0.1),
+    inset 0 -40px 40px -40px rgba(0,0,0,0.05);
+}
+
+/* Torn paper edge */
+.torn-edge-top {
+  position: relative;
+}
+
+.torn-edge-top::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8 L5 4 L10 7 L18 3 L25 6 L32 2 L40 5 L48 3 L55 7 L62 4 L70 6 L78 2 L85 5 L92 3 L100 8' fill='%23f5f3ed'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 50px 8px;
+}
+
+.torn-edge-bottom {
+  position: relative;
+}
+
+.torn-edge-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L5 4 L10 1 L18 5 L25 2 L32 6 L40 3 L48 5 L55 1 L62 4 L70 2 L78 6 L85 3 L92 5 L100 0' fill='%23f5f3ed'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 50px 8px;
+}
+
+/* Pin/pushpin holder effect */
+.pinned::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 40% 40%, #d44, #a22);
+  border-radius: 50%;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+/* Doodle border */
+.doodle-border {
+  border: none;
+  position: relative;
+}
+
+.doodle-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='2' stroke-dasharray='8 4 2 4' stroke-linecap='round'/%3E%3C/svg%3E");
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Page number style */
+.page-number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  position: relative;
+}
+
+.page-number::before {
+  content: '— ';
+}
+
+.page-number::after {
+  content: ' —';
+}
