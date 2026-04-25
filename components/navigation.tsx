@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Link from "next/link"
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -10,6 +11,7 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
+  { label: "Notes", href: "/notes" },
 ]
 
 interface NavigationProps {
@@ -38,12 +40,21 @@ export function Navigation({ isVisible }: NavigationProps) {
           <ul className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a 
-                  href={item.href}
-                  className="hover:text-accent transition-colors hand-underline"
-                >
-                  {item.label}
-                </a>
+                {item.href.startsWith('/') ? (
+                  <Link 
+                    href={item.href}
+                    className="hover:text-accent transition-colors hand-underline"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a 
+                    href={item.href}
+                    className="hover:text-accent transition-colors hand-underline"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -74,13 +85,23 @@ export function Navigation({ isVisible }: NavigationProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <a 
-                  href={item.href}
-                  className="text-2xl hover:text-accent transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                {item.href.startsWith('/') ? (
+                  <Link 
+                    href={item.href}
+                    className="text-2xl hover:text-accent transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a 
+                    href={item.href}
+                    className="text-2xl hover:text-accent transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )}
               </motion.li>
             ))}
           </ul>
