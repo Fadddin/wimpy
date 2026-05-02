@@ -74,17 +74,17 @@ export function AboutSection() {
                 <span className="text-2xl">Dear Diary,</span>
               </p>
               <p>
-                Sup, <span className="highlighted">Fardin</span> here, B.Tech student at Tezpur University 
-                (class of 2026, CGPA 8.4 — {"Mom's"} finally proud).
+                Sup, <span className="highlighted">Fardin</span> here, B.Tech ECE student at Tezpur University 
+                (class of 2026).
               </p>
               
               {/* Margin note */}
               <div className="relative">
                 <p>
                   My journey started when I realized clicking buttons on a computer could actually 
-                  make money. Now {"I'm"} a <span className="hand-underline">{'"full-stack developer"'}</span> — which means 
+                  make money. Now {"I'm"} a <span className="hand-underline">{'"developer"'}</span> — which means 
                   I can confidently break things on BOTH the frontend AND the backend. Currently 
-                  working at <span className="font-bold">Atlan</span> as a Software Developer Intern, building 
+                  working at <span className="font-bold">Atlan</span> as a Software Engineer - I, building 
                   cool stuff with python(claude), vue(claude), Go (claude), and an unhealthy amount of caffeine.
                 </p>
                 <motion.div 
@@ -103,8 +103,7 @@ export function AboutSection() {
                 {"I've"} survived multiple internships (see experience section if you {"don't"} believe me), 
                 built actual products that real humans use, and only mass-deployed bugs to production 
                 <span className="text-sm text-muted-foreground"> (a few times)</span>. When {"I'm"} not 
-                coding, {"I'm"} probably debugging. When {"I'm"} not debugging, {"I'm"} thinking about 
-                that bug from last week.
+                coding, {"I'm"} probably travelling. When {"I'm"} not travelling, {"I'm"} trying to find meaning out of life.
               </p>
               
               {/* Signature with doodle */}

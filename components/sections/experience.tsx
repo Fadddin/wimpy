@@ -5,19 +5,33 @@ import { ArrowDoodle, StarDoodle, CheckmarkDoodle } from "@/components/doodles"
 
 const experiences = [
   {
+    role: "SDE-1",
+    company: "Atlan",
+    period: "May 2026 - Present",
+    description: "Building the context layer for AI.",
+    highlights: [
+      "Helping AI understand data better"
+    ],
+    rotation: 1.8,
+    stampRotation: -8,
+    stampText: "CURRENT",
+    stampColor: "text-green-600 border-green-600",
+    note: "officially a dev",
+  },
+  {
     role: "Software Developer Intern",
     company: "Atlan",
-    period: "Jan 2026 - Present",
+    period: "Jan 2026 - April 2026",
     description: "Building data catalog features and shipping production code that actual enterprises use. Still amazed they let me touch the codebase.",
     highlights: [
       "Working on enterprise-grade data governance tools",
       "Collaborating with senior engineers (and learning SO much)",
-      "Actually understanding what 'data mesh' means now"
+      "Actually understanding what 'data' means now"
     ],
     rotation: -1.5,
     stampRotation: 12,
-    stampText: "CURRENT",
-    stampColor: "text-green-600 border-green-600",
+    stampText: "COMPLETED",
+    stampColor: "text-accent border-accent",
     note: "dream job vibes",
   },
   {

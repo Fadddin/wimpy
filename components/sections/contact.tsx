@@ -24,16 +24,16 @@ const contacts = [
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/fardin",
-    href: "https://github.com/fardin",
+    value: "github.com/Fadddin",
+    href: "https://github.com/Fadddin",
     rotation: -1,
     note: "see my code",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/fardin",
-    href: "https://linkedin.com/in/fardin",
+    value: "linkedin.com/in/fardin-khan-a62a06266",
+    href: "https://www.linkedin.com/in/fardin-khan-a62a06266/",
     rotation: 2,
     note: "let's connect",
   },
@@ -117,7 +117,7 @@ export function ContactSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              Dear <span className="highlighted">future collaborator</span>/employer/fellow dev,
+              Dear <span className="highlighted">future collaborator</span>/fellow dev,
             </motion.p>
             
             <motion.p 
@@ -128,9 +128,9 @@ export function ContactSection() {
               transition={{ delay: 0.5 }}
             >
               If {"you've"} made it this far, <span className="font-bold">congratulations!</span> You now know more about me 
-              than most of my professors. hit me up, always 
-              open to interesting opportunities, side projects, or just geeking out about tech. 
-              Feel free to reach out — I promise I reply faster than my APIs.
+              than most of my professors. hit me up,  
+              open to interesting stuff, side projects, or just geeking out about tech. 
+              Feel free to reach out.
             </motion.p>
             
             {/* Arrow */}
@@ -228,12 +228,12 @@ export function ContactSection() {
                 </motion.div>
               </div>
               
-              <p 
+              {/* <p 
                 className="text-sm text-muted-foreground"
                 style={{ transform: "rotate(-1deg)" }}
               >
                 P.S. If {"you're"} a recruiter, <span className="highlighted">yes I can work remotely!</span>
-              </p>
+              </p> */}
             
             </motion.div>
             
@@ -261,7 +261,7 @@ export function ContactSection() {
           
           <div className="flex items-center justify-center gap-2 mt-2">
             <StarDoodle className="w-3 h-3 opacity-30" />
-            <p className="text-xs text-muted-foreground">© 2026 {"Fardin's"} Dev Diary — B.Tech ECE, Tezpur University</p>
+            <p className="text-xs text-muted-foreground">© 2026 {"Fardin's"} Diary</p>
             <StarDoodle className="w-3 h-3 opacity-30" />
           </div>
           
