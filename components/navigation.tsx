@@ -59,9 +59,9 @@ export function Navigation({ isVisible }: NavigationProps) {
             ))}
           </ul>
           
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden p-2"
+          {/* Mobile menu button — offset so it clears the fixed theme toggle in the corner */}
+          <button
+            className="md:hidden p-2 mr-14"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
