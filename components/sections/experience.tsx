@@ -167,11 +167,17 @@ export function ExperienceSection() {
             {/* Timeline */}
             <div className="relative space-y-8">
               {/* Vertical timeline line - hand drawn style */}
-              <svg className="absolute left-0 top-4 bottom-4 w-4" style={{ height: "calc(100% - 32px)" }}>
-                <path 
-                  d="M8 0 Q6 80 10 160 Q8 240 9 320 Q10 400 7 480 Q9 560 8 640" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
+              <svg
+                className="absolute left-0 top-4 bottom-4 w-4"
+                style={{ height: "calc(100% - 32px)" }}
+                viewBox="0 0 16 640"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M8 0 Q6 80 10 160 Q8 240 9 320 Q10 400 7 480 Q9 560 8 640"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  vectorEffect="non-scaling-stroke"
                   fill="none"
                   strokeDasharray="8 4"
                   className="opacity-30"
