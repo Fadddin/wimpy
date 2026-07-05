@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Patrick_Hand, Caveat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
 import './globals.css'
 
 const patrickHand = Patrick_Hand({ 
@@ -26,9 +28,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${patrickHand.variable} ${caveat.variable} font-sans antialiased`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeToggle />
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
