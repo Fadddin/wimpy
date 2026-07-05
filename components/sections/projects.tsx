@@ -180,7 +180,7 @@ export function ProjectsSection() {
                   
                   {/* Card - sticky note style */}
                   <div 
-                    className="relative bg-secondary border-2 border-foreground/40 p-5 pt-7 hover-wiggle-strong transition-all cursor-pointer group sticky-note torn-edge-bottom"
+                    className="relative bg-secondary border-2 border-foreground/40 p-5 pt-7 hover-wiggle-strong transition-all cursor-pointer group sticky-note"
                     style={{ 
                       transform: `rotate(${project.rotation}deg)`,
                       boxShadow: "3px 3px 8px rgba(0,0,0,0.1)"

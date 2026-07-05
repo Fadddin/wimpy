@@ -3,6 +3,7 @@ import { Patrick_Hand, Caveat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { ReducedMotionProvider } from '@/components/reduced-motion-provider'
 import './globals.css'
 
 const patrickHand = Patrick_Hand({ 
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${patrickHand.variable} ${caveat.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ThemeToggle />
-          {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ReducedMotionProvider>
+            <ThemeToggle />
+            {children}
+          </ReducedMotionProvider>
         </ThemeProvider>
         <Analytics />
       </body>
