@@ -6,71 +6,68 @@ export function StickFigureDev() {
   return (
     <svg viewBox="0 0 120 160" className="w-36 h-44" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
       {/* Hair spikes - messy */}
-      <path d="M42 12 Q44 2 48 8" />
-      <path d="M52 6 Q56 -4 60 4" />
-      <path d="M62 3 Q68 -3 72 6" />
-      <path d="M74 10 Q80 4 78 14" />
-      
-      {/* Head - slightly wobbly circle */}
-      <path d="M40 28 Q38 10 60 8 Q82 10 80 28 Q82 46 60 48 Q38 46 40 28" />
-      
-      {/* Eyes - uneven */}
-      <circle cx="50" cy="24" r="4" fill="currentColor" />
-      <circle cx="70" cy="23" r="4.5" fill="currentColor" />
-      
-      {/* Eyebrows */}
-      <path d="M45 17 Q50 14 55 17" />
-      <path d="M65 16 Q70 13 76 17" />
-      
-      {/* Nose */}
-      <path d="M60 28 L58 34" />
-      
-      {/* Mouth - crooked smile */}
-      <path d="M50 38 Q55 44 62 42 Q68 40 72 36" />
-      
+      <path d="M40 14 Q42 4 46 10" />
+      <path d="M48 8 Q52 -2 56 6" />
+      <path d="M58 5 Q64 -3 68 8" />
+      <path d="M68 12 Q74 6 72 16" />
+
+      {/* Head - tilted down, focused on the page */}
+      <path d="M38 28 Q36 10 56 8 Q76 10 74 28 Q76 44 56 46 Q36 44 38 28" />
+
+      {/* Eyes - looking down at the diary */}
+      <circle cx="48" cy="30" r="2.6" fill="currentColor" />
+      <circle cx="64" cy="29" r="2.6" fill="currentColor" />
+
+      {/* Eyebrows - concentrating */}
+      <path d="M43 24 Q47 22 51 25" />
+      <path d="M60 23 Q65 21 69 24" />
+
+      {/* Mouth - tongue-out concentration */}
+      <path d="M52 38 Q56 41 60 38" />
+      <path d="M56 39 Q57 43 60 40" strokeWidth="1.6" />
+
       {/* Neck */}
-      <path d="M56 48 L54 58" />
-      <path d="M64 48 L66 58" />
-      
-      {/* Body - wobbly */}
-      <path d="M54 58 Q40 62 38 85 Q36 105 55 108" />
-      <path d="M66 58 Q80 62 82 85 Q84 105 65 108" />
-      <path d="M55 108 Q60 112 65 108" />
-      
-      {/* Left arm holding coffee */}
-      <path d="M40 68 Q25 75 20 88" />
-      
-      {/* Coffee cup in hand */}
-      <path d="M12 82 L12 98 Q12 102 16 102 L26 102 Q30 102 30 98 L30 82 Z" />
-      <path d="M30 86 Q38 86 38 92 Q38 98 30 98" />
-      {/* Steam */}
-      <path d="M17 78 Q19 74 17 70" strokeWidth="1.5" />
-      <path d="M22 76 Q24 72 22 68" strokeWidth="1.5" />
-      
-      {/* Right arm - typing on laptop */}
-      <path d="M80 70 Q95 78 98 85" />
-      
-      {/* Laptop */}
-      <rect x="88" y="78" width="28" height="20" rx="1" />
-      <path d="M86 98 L118 98 L115 102 L89 102 Z" />
-      {/* Screen lines */}
-      <line x1="92" y1="84" x2="108" y2="84" strokeWidth="1" />
-      <line x1="92" y1="88" x2="112" y2="88" strokeWidth="1" />
-      <line x1="92" y1="92" x2="105" y2="92" strokeWidth="1" />
-      
-      {/* Legs */}
-      <path d="M52 108 Q48 125 42 145" />
-      <path d="M68 108 Q72 125 78 145" />
-      
-      {/* Feet */}
-      <path d="M42 145 Q38 148 35 146" />
-      <path d="M78 145 Q82 148 85 146" />
-      
-      {/* Thought bubble */}
-      <circle cx="95" cy="55" r="3" strokeWidth="1.5" />
-      <circle cx="102" cy="48" r="4" strokeWidth="1.5" />
-      <ellipse cx="112" cy="38" rx="8" ry="6" strokeWidth="1.5" />
-      <text x="109" y="41" fontSize="8" fill="currentColor" stroke="none">?!</text>
+      <path d="M52 46 L50 54" />
+      <path d="M62 46 L64 54" />
+
+      {/* Body - hunched forward over the lap */}
+      <path d="M50 54 Q40 62 44 88" />
+      <path d="M64 54 Q78 62 74 86" />
+      <path d="M44 88 Q58 94 74 86" />
+
+      {/* Open diary resting on the lap */}
+      <path d="M38 104 L58 96 L58 112 L40 118 Z" />
+      <path d="M58 96 L80 104 L78 118 L58 112 Z" />
+      <path d="M58 96 L58 112" />
+      {/* Written lines on the page */}
+      <path d="M62 102 L74 105" strokeWidth="1" />
+      <path d="M62 106 L72 108.5" strokeWidth="1" />
+      <path d="M44 104 L54 101" strokeWidth="1" />
+      <path d="M44 108 L53 105.5" strokeWidth="1" />
+
+      {/* Left arm - steadying the diary */}
+      <path d="M46 58 Q32 72 42 102" />
+
+      {/* Right arm - holding the pencil, writing */}
+      <path d="M66 58 Q82 70 70 98" />
+
+      {/* Pencil */}
+      <path d="M68 100 L82 84" strokeWidth="2.8" />
+      <path d="M66 101 L70 99" strokeWidth="1.6" />
+      {/* Pencil tip */}
+      <path d="M67 100 L71 96" strokeWidth="1.4" />
+
+      {/* Crossed legs - sitting on the floor */}
+      <path d="M44 92 Q28 108 40 124 Q54 132 62 122" />
+      <path d="M74 90 Q90 108 78 124 Q64 132 56 122" />
+      {/* Tucked feet */}
+      <path d="M40 124 Q35 122 33 126" />
+      <path d="M78 124 Q83 122 85 126" />
+
+      {/* Little "creativity" doodles near the head */}
+      <path d="M84 30 L88 26" strokeWidth="1.4" />
+      <path d="M87 34 L92 31" strokeWidth="1.4" />
+      <path d="M84 22 L84 17 M81.5 19.5 L86.5 19.5" strokeWidth="1.4" />
     </svg>
   )
 }
