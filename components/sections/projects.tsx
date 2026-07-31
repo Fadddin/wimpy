@@ -83,14 +83,7 @@ function TapePiece({ rotation, position }: { rotation: number; position: string 
 
 export function ProjectsSection() {
   return (
-    <motion.section 
-      id="projects"
-      className="min-h-screen py-16 px-4"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-    >
+    <section id="projects" className="min-h-screen py-16 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Diary page */}
         <div className="relative bg-card paper-texture notebook-lines p-6 md:p-10 border-2 border-border"
@@ -287,6 +280,6 @@ export function ProjectsSection() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

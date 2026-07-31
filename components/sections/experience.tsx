@@ -101,14 +101,7 @@ function StampDoodle({ text, rotation, colorClass }: { text: string; rotation: n
 
 export function ExperienceSection() {
   return (
-    <motion.section 
-      id="experience"
-      className="min-h-screen py-16 px-4"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-    >
+    <section id="experience" className="min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Diary page */}
         <div className="relative bg-card paper-texture notebook-lines p-6 md:p-10 border-2 border-border"
@@ -288,6 +281,6 @@ export function ExperienceSection() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

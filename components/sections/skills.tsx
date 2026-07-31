@@ -37,14 +37,7 @@ function SketchyStarRating({ count }: { count: number }) {
 
 export function SkillsSection() {
   return (
-    <motion.section 
-      id="skills"
-      className="min-h-screen py-16 px-4"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-    >
+    <section id="skills" className="min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Diary page */}
         <div className="relative bg-card paper-texture notebook-lines p-6 md:p-10 border-2 border-border"
@@ -180,6 +173,6 @@ export function SkillsSection() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

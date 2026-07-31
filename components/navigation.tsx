@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import { scrollToBookPage } from "@/components/page-turn"
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -48,9 +49,13 @@ export function Navigation({ isVisible }: NavigationProps) {
                     {item.label}
                   </Link>
                 ) : (
-                  <a 
+                  <a
                     href={item.href}
                     className="hover:text-accent transition-colors hand-underline"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToBookPage(item.href.slice(1))
+                    }}
                   >
                     {item.label}
                   </a>
@@ -101,7 +106,11 @@ export function Navigation({ isVisible }: NavigationProps) {
                     <a
                       href={item.href}
                       className="text-2xl hover:text-accent transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setMobileMenuOpen(false)
+                        scrollToBookPage(item.href.slice(1))
+                      }}
                     >
                       {item.label}
                     </a>
