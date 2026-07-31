@@ -10,15 +10,16 @@ import { ExperienceSection } from "@/components/sections/experience"
 import { ContactSection } from "@/components/sections/contact"
 import { Navigation } from "@/components/navigation"
 import { FloatingDoodles } from "@/components/doodles"
+import { BookStack } from "@/components/page-turn"
 
 export default function Home() {
   const [diaryOpen, setDiaryOpen] = useState(false)
 
   const handleOpenDiary = () => {
     setDiaryOpen(true)
-    // Smooth scroll to about section after a short delay
+    // The book stack starts at the top of the document
     setTimeout(() => {
-      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+      window.scrollTo({ top: 0 })
     }, 300)
   }
 
@@ -42,13 +43,16 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="pt-16"
           >
-            <AboutSection />
-            <ProjectsSection />
-            <SkillsSection />
-            <ExperienceSection />
-            <ContactSection />
+            <BookStack
+              pages={[
+                { id: "about", content: <AboutSection /> },
+                { id: "projects", content: <ProjectsSection /> },
+                { id: "skills", content: <SkillsSection /> },
+                { id: "experience", content: <ExperienceSection /> },
+                { id: "contact", content: <ContactSection /> },
+              ]}
+            />
           </motion.div>
         )}
       </AnimatePresence>
